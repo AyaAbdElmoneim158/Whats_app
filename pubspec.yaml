@@ -29,6 +29,8 @@ dependencies:
   uuid: ^4.5.1
   custom_clippers: ^2.0.0
   shimmer: ^3.0.0
+  fluttertoast: ^8.2.8
+  giphy_picker: ^3.0.2
 
 
 dev_dependencies:
