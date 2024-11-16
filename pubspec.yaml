@@ -31,7 +31,24 @@ dependencies:
   shimmer: ^3.0.0
   fluttertoast: ^8.2.8
   giphy_picker: ^3.0.2
+  get_it: ^8.0.2
+  agora_uikit: ^1.3.10
+  file_picker: ^8.0.7
+  get_time_ago: ^2.0.0
 
+# Splash - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+flutter_native_splash:
+  color: "#FFFFFF"
+  color_dark: "#111B21"
+  image: assets/images/splash_light.png
+  image_dark: assets/images/splash_dark.png
+  android_12:
+    color: "#FFFFFF"
+    color_dark: "#111B21"
+    image: assets/images/splash_light.png
+    image_dark: assets/images/splash_dark.png
+    icon_background_color: "#FFFFFF"
+    icon_background_color_dark: "#111B21"
 
 dev_dependencies:
   flutter_test:

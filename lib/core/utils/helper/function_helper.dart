@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:whatsapp_messenger/core/theme/custom_theme_extension.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:giphy_picker/giphy_picker.dart';
@@ -98,7 +99,7 @@ class FunctionsHelper {
   }
 
   // Toast -------------------------------------------------
-  void toast(String message) {
+  static void toast(String message) {
     Fluttertoast.showToast(
       msg: message,
       toastLength: Toast.LENGTH_SHORT,
@@ -110,7 +111,7 @@ class FunctionsHelper {
   }
 
   // PickGIF -------------------------------------------------
-  Future<GiphyGif?> pickGIF(BuildContext context) async {
+  static Future<GiphyGif?> pickGIF(BuildContext context) async {
     GiphyGif? gif;
     try {
       gif = await GiphyPicker.pickGif(
@@ -121,22 +122,29 @@ class FunctionsHelper {
 
     return gif;
   }
-  String formatDateTime(DateTime dateTime) {
-  final today = DateTime.now();
-  final tomorrow = DateTime.now().add(Duration(days: 1));
-  final yesterday = DateTime.now().subtract(Duration(days: 1));
 
-  final timeFormatter = DateFormat('h:mm a');
+  static String formatDateTime(DateTime dateTime) {
+    final today = DateTime.now();
+    final tomorrow = DateTime.now().add(const Duration(days: 1));
+    final yesterday = DateTime.now().subtract(const Duration(days: 1));
 
-  if (dateTime.year == today.year && dateTime.month == today.month && dateTime.day == today.day) {
-    return 'Today, ${timeFormatter.format(dateTime)}';
-  } else if (dateTime.year == tomorrow.year && dateTime.month == tomorrow.month && dateTime.day == tomorrow.day) {
-    return 'Tomorrow, ${timeFormatter.format(dateTime)}';
-  } else if (dateTime.year == yesterday.year && dateTime.month == yesterday.month && dateTime.day == yesterday.day) {
-    return 'Yesterday, ${timeFormatter.format(dateTime)}';
-  } else {
-    final dateFormatter = DateFormat('MMM d');
-    return '${dateFormatter.format(dateTime)}, ${timeFormatter.format(dateTime)}';
+    final timeFormatter = DateFormat('h:mm a');
+
+    if (dateTime.year == today.year &&
+        dateTime.month == today.month &&
+        dateTime.day == today.day) {
+      return 'Today, ${timeFormatter.format(dateTime)}';
+    } else if (dateTime.year == tomorrow.year &&
+        dateTime.month == tomorrow.month &&
+        dateTime.day == tomorrow.day) {
+      return 'Tomorrow, ${timeFormatter.format(dateTime)}';
+    } else if (dateTime.year == yesterday.year &&
+        dateTime.month == yesterday.month &&
+        dateTime.day == yesterday.day) {
+      return 'Yesterday, ${timeFormatter.format(dateTime)}';
+    } else {
+      final dateFormatter = DateFormat('MMM d');
+      return '${dateFormatter.format(dateTime)}, ${timeFormatter.format(dateTime)}';
+    }
   }
-}
 }

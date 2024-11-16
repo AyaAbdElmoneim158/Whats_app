@@ -1,6 +1,6 @@
 class UserModel {
   final String username;
-  final String uid;
+  final String? uid;
   final String profileImageUrl;
   final bool active;
   final int lastSeen;
