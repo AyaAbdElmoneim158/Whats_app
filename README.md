@@ -39,7 +39,7 @@ Welcome to the WhatsApp Clone App repository! This Flutter-based app replicates 
    git clone https://github.com/AyaAbdElmoneim158/WhatsApp_Clone
 1. Navigate to the project directory:
     ```bash
-   cd Quran_App_2023
+   cd WhatsApp_Clone
 2. Install dependencies:
     ```bash
    flutter pub get
